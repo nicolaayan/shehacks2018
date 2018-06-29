@@ -126,6 +126,7 @@
     <Content Include="Views\Building\ConciergeServices.cshtml" />
     <Content Include="Views\Building\Forum.cshtml" />
     <Content Include="Views\Shared\BottomNavigation.cshtml" />
+    <None Include="Properties\PublishProfiles\shehacks2018 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
