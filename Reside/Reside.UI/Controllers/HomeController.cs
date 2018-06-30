@@ -58,7 +58,7 @@ namespace Reside.UI.Controllers
         {
             return new TopNavigation()
             {
-                CurrentPageText = "Building 1701",
+                CurrentPageText = "One Darling Harbour",
                 CurrentPageIcon = "home",
                 MenuLinks = new List<TopNavigation.MenuItem>
                 {

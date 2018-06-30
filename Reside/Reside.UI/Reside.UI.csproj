@@ -92,6 +92,7 @@
     <Content Include="Content\css\min\styles.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\Gruntfile.js" />
+    <Content Include="Content\img\logo.png" />
     <Content Include="Content\jquery\custom.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
