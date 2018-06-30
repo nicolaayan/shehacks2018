@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Reside.UI.Models;
 
 namespace Reside.UI.Controllers
 {
@@ -19,9 +20,15 @@ namespace Reside.UI.Controllers
             return View();
         }
 
-        public ActionResult MyParcels()
+        public ActionResult Parcels()
         {
-            return View();
+            var model = new Page
+            {
+                TopNav = HomeController.GetTopNav(),
+                TopSecondaryNav = HomeController.GetTopSecondaryNav("Concierge", "My parcels")
+            };
+
+            return View(model);
         }
 
         public ActionResult LeaveAMessage()

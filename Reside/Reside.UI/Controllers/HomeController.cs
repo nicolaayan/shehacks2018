@@ -15,7 +15,7 @@ namespace Reside.UI.Controllers
             var model = new Page
             {
                 TopNav = GetTopNav(),
-                TopSecondaryNav = GetTopSecondaryNav("Concierge")
+                TopSecondaryNav = GetTopSecondaryNav("Concierge", "Announcements")
             };
 
             return View(model);
@@ -26,7 +26,7 @@ namespace Reside.UI.Controllers
             var model = new Page
             {
                 TopNav = GetTopNav(),
-                TopSecondaryNav = GetTopSecondaryNav("Bulletin board")
+                TopSecondaryNav = GetTopSecondaryNav("Bulletin board", "Feed")
             };
 
             return View(model);
@@ -54,7 +54,7 @@ namespace Reside.UI.Controllers
             return View(model);
         }
 
-        private TopNavigation GetTopNav()
+        public static TopNavigation GetTopNav()
         {
             return new TopNavigation()
             {
@@ -73,7 +73,7 @@ namespace Reside.UI.Controllers
             };
         }
 
-        private TopNavigation GetTopSecondaryNav(string name)
+        public static TopNavigation GetTopSecondaryNav(string name, string bottomLink = "")
         {
             return new TopNavigation()
             {
@@ -85,45 +85,96 @@ namespace Reside.UI.Controllers
                         Link = "/home/index",
                         Icon = "concierge-bell",
                         IsActive = "Concierge" == name,
-                        BottomLinks = new List<TopNavigation.MenuItem>
-                        {
-                            new TopNavigation.MenuItem
-                            {
-                                Text = "Announcements",
-                                Link = "/concierge/announcements",
-                                Icon = "bullhorn",
-                                IsActive = true
-                            },
-                            new TopNavigation.MenuItem
-                            {
-                                Text = "My parcels",
-                                Link = "/concierge/parcels",
-                                Icon = "cube"
-                            },
-                            new TopNavigation.MenuItem
-                            {
-                                Text = "Leave a message",
-                                Link = "/concierge/message",
-                                Icon = "comment"
-                            }
-                        }
+                        BottomLinks = GetConciergeBottomLinks(bottomLink)
                     },
                     new TopNavigation.MenuItem
                     {
                         Text = "Bulletin board",
                         Link = "/home/board",
                         Icon = "clipboard-list",
-                        IsActive = "Bulletin board" == name
+                        IsActive = "Bulletin board" == name,
+                        BottomLinks = GetBoardBottomLinks(bottomLink)
                     },
                     new TopNavigation.MenuItem
                     {
                         Text = "Security",
                         Link = "/home/security",
                         Icon = "lock",
-                        IsActive = "Security" == name
+                        IsActive = "Security" == name,
+                        //BottomLinks = GetConciergeBottomLinks("Leave a message")
                     }
                 }
             };
+        }
+
+        public static List<TopNavigation.MenuItem> GetConciergeBottomLinks(string activeItem)
+        {
+            if (string.IsNullOrEmpty(activeItem))
+            {
+                return new List<TopNavigation.MenuItem>();
+            }
+            else
+            {
+                return new List<TopNavigation.MenuItem>
+                {
+                    new TopNavigation.MenuItem
+                    {
+                        Text = "Announcements",
+                        Link = "/home/index",
+                        Icon = "bullhorn",
+                        IsActive = "Announcements" == activeItem
+                    },
+                    new TopNavigation.MenuItem
+                    {
+                        Text = "My parcels",
+                        Link = "/concierge/parcels",
+                        Icon = "cube",
+                        IsActive = "My parcels" == activeItem
+                    },
+                    new TopNavigation.MenuItem
+                    {
+                        Text = "Leave a message",
+                        Link = "/concierge/message",
+                        Icon = "comment",
+                        IsActive = "Leave a message" == activeItem
+                    }
+                };
+            }
+        }
+
+        public static List<TopNavigation.MenuItem> GetBoardBottomLinks(string activeItem)
+        {
+            if (string.IsNullOrEmpty(activeItem))
+            {
+                return new List<TopNavigation.MenuItem>();
+            }
+            else
+            {
+                return new List<TopNavigation.MenuItem>
+                {
+                    new TopNavigation.MenuItem
+                    {
+                        Text = "Feed",
+                        Link = "/home/index",
+                        Icon = "comments",
+                        IsActive = "Feed" == activeItem
+                    },
+                    new TopNavigation.MenuItem
+                    {
+                        Text = "Create post",
+                        Link = "/board/createpost",
+                        Icon = "pen",
+                        IsActive = "Create post" == activeItem
+                    },
+                    new TopNavigation.MenuItem
+                    {
+                        Text = "Favourites",
+                        Link = "/board/favourites",
+                        Icon = "heart",
+                        IsActive = "Favourites" == activeItem
+                    }
+                };
+            }
         }
     }
 }

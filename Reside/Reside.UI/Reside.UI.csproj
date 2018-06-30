@@ -98,6 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BoardController.cs" />
     <Compile Include="Controllers\BuildingController.cs" />
     <Compile Include="Controllers\CommunityController.cs" />
     <Compile Include="Controllers\ConciergeController.cs" />
@@ -123,7 +124,7 @@
     <Content Include="Views\Concierge\LeaveAMessage.cshtml" />
     <Content Include="Views\Concierge\Index.cshtml" />
     <Content Include="Views\Concierge\Announcements.cshtml" />
-    <Content Include="Views\Concierge\MyParcels.cshtml" />
+    <Content Include="Views\Concierge\Parcels.cshtml" />
     <Content Include="Views\Community\Index.cshtml" />
     <Content Include="Views\Community\News.cshtml" />
     <Content Include="Views\Community\Events.cshtml" />
@@ -149,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Board\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
