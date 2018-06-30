@@ -1,0 +1,21 @@
+﻿@model Reside.UI.Models.TopNavigation
+	
+<div class="btn-group btn-group-justified top-secondary-nav" role="group" aria-label="top-secondary-nav">
+	
+	@if (Model.MenuLinks.Any())
+	{
+		<div class="btn-group" role="group">
+			<a href="#" role="button" class="active btn btn-default btn-xs">
+				<i class="fas fa-@Model.CurrentPageIcon"></i>@Model.CurrentPageText
+			</a>
+		</div>
+		foreach (var menuItem in Model.MenuLinks)
+		{
+			<div class="btn-group" role="group">
+				<a href="@menuItem.Link" role="button" class="btn btn-default btn-xs">
+					<i class="fas fa-@menuItem.Icon"></i>@menuItem.Text
+				</a>
+			</div>
+		}
+	}
+</div>

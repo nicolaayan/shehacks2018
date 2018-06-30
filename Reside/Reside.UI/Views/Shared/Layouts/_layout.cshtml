@@ -1,4 +1,5 @@
 ﻿@using System.Configuration
+@model Reside.UI.Models.Page
 <!doctype html>
 <html>
 <head>
@@ -20,11 +21,12 @@
 <body>
 
 	<div class="container">
-		@Html.Partial("TopNavigation")
+		@Html.Partial("TopNavigation", Model.TopNav)
 	</div>
 	
 <main>
 	<div class="container">
+		@Html.Partial("TopSecondaryNav", Model.TopSecondaryNav)
 		@RenderBody()
 	</div>
 </main>

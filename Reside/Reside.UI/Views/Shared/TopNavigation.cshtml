@@ -1,13 +1,24 @@
-﻿
+﻿@model Reside.UI.Models.TopNavigation
 <div class="top-nav">
 	<div class="btn-group">
 		<button class="btn btn-default dropdown-toggle btn-lg" type="button" data-toggle="dropdown" 
 		        aria-haspopup="true" aria-expanded="false">
-			<i class="fas fa-home"></i> Building 1701 <span class="caret"></span>
+			<i class="fas fa-@Model.CurrentPageIcon"></i> @Model.CurrentPageText <span class="caret"></span>
 		</button>
-		<ul class="dropdown-menu">
-			<li><a href="~/community">My community</a></li>
-		</ul>
+		@if (Model.MenuLinks.Any())
+		{
+			<ul class="dropdown-menu">
+				@foreach (var menu in Model.MenuLinks)
+				{
+					<li>
+						<a href="@menu.Link">
+							<i class="fas fa-@menu.Icon"></i>@menu.Text
+						</a>
+					</li>
+				}
+			</ul>
+		}
+		
 	</div>
 	
 	<button class="btn btn-default pull-right btn-profile" onclick="openNav()">

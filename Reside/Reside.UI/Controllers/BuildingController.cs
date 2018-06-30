@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Reside.UI.Models;
 
 namespace Reside.UI.Controllers
 {
@@ -11,7 +12,21 @@ namespace Reside.UI.Controllers
         // GET: Building
         public ActionResult Index()
         {
-            return View();
+            var model = new TopNavigation()
+            {
+                CurrentPageText = "Building 1701",
+                MenuLinks = new List<TopNavigation.MenuItem>
+                {
+                    new TopNavigation.MenuItem
+                    {
+                        Text = "My community",
+                        Link = "~/community",
+                        Icon = "users"
+                    }
+                }
+            };
+
+            return View(model);
         }
 
         public ActionResult ConciergeServices()
