@@ -1,9 +1,25 @@
 ﻿@model Reside.UI.Models.TopNavigation
+
+@*@if (Model.MenuLinks.Any())
+{
+<ul class="nav nav-pills">
+	@foreach (var menuItem in Model.MenuLinks)
+	{
+		<li role="presentation" class="@(menuItem.IsActive ? "active" : "")"><a href="@menuItem.Link">@menuItem.Text</a></li>
+	}
+
+	<li role="presentation"><a href="#">Profile</a></li>
+	<li role="presentation"><a href="#">Messages</a></li>
+</ul>
+	
+}*@
+
 	
 <div class="btn-group btn-group-justified top-secondary-nav" role="group" aria-label="top-secondary-nav">
 	
 	@if (Model.MenuLinks.Any())
 	{
+
 		foreach (var menuItem in Model.MenuLinks)
 		{
 			<div class="btn-group" role="group">

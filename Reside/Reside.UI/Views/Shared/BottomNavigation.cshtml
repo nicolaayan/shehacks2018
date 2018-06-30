@@ -3,7 +3,7 @@
 <div class="btn-group btn-group-justified bottom-nav">
 	@foreach (var menuItem in Model)
 	{
-		<a href="@menuItem.Link" class="btn btn-primary btn-sm @(menuItem.IsActive ? "active" : "")">
+		<a href="@menuItem.Link" class="btn btn-success btn-sm @(menuItem.IsActive ? "active" : "")">
 			<i class="fas fa-@menuItem.Icon"></i><br/>@menuItem.Text
 		</a>
 	}

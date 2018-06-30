@@ -24,7 +24,22 @@
 
 .top-secondary-nav {
     i {
-        margin-right:5px;
+        margin-right: 5px;
+    }
+
+    .btn {
+        border: none;
+        border-radius: 0 !important;
+        line-height: 30px;
+
+        &.active {
+            background-color: #fff;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border-bottom: 1px solid #19C088;
+            color: #19C088;
+            font-weight: 700;
+        }
     }
 }
 
@@ -37,14 +52,16 @@
     .btn {
         border-radius: 0;
         border: none;
-        height: 65px;
+        height: 70px;
+        font-size: 14px;
 
         &.active i {
-            color: #15aabf;
+            color: #fff;
         }
 
         i {
-            margin-bottom:6px;
+            margin-bottom: 4px;
+            font-size: 24px;
         }
     }
 }
