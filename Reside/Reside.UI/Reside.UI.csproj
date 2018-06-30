@@ -134,6 +134,9 @@
     <Content Include="Views\Shared\TopNavigation.cshtml" />
     <None Include="Properties\PublishProfiles\shehacks2018 - Web Deploy1.pubxml" />
     <Content Include="Views\Shared\TopSecondaryNav.cshtml" />
+    <Content Include="Views\Home\Board.cshtml" />
+    <Content Include="Views\Home\Forum.cshtml" />
+    <Content Include="Views\Home\Security.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

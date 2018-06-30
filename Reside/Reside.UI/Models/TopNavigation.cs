@@ -22,6 +22,7 @@ namespace Reside.UI.Models
             public string SubText { get; set; }
             public string Link { get; set; }
             public string Icon { get; set; }
+            public bool IsActive { get; set; }
         }
     }
 }
