@@ -73,21 +73,6 @@ namespace Reside.UI.Controllers
             };
         }
 
-        //private TopNavigation GetTopSecondaryNav(string name)
-        //{
-        //    var topNav = GetTopSecondaryNav();
-        //    var currentMenuItem = topNav.MenuLinks.First(ml => ml.Text == name);
-
-        //    var newTopNav = new TopNavigation
-        //    {
-        //        CurrentPageIcon = currentMenuItem.Icon,
-        //        CurrentPageText = currentMenuItem.Text,
-        //        MenuLinks = topNav.MenuLinks.Where(ml => ml.Text != name).ToList()
-        //    };
-
-        //    return newTopNav;
-        //}
-
         private TopNavigation GetTopSecondaryNav(string name)
         {
             return new TopNavigation()
@@ -99,14 +84,36 @@ namespace Reside.UI.Controllers
                         Text = "Concierge",
                         Link = "/home/index",
                         Icon = "concierge-bell",
-                        IsActive = "Concierge" == name
+                        IsActive = "Concierge" == name,
+                        BottomLinks = new List<TopNavigation.MenuItem>
+                        {
+                            new TopNavigation.MenuItem
+                            {
+                                Text = "Announcements",
+                                Link = "/concierge/announcements",
+                                Icon = "bullhorn",
+                                IsActive = true
+                            },
+                            new TopNavigation.MenuItem
+                            {
+                                Text = "My parcels",
+                                Link = "/concierge/parcels",
+                                Icon = "cube"
+                            },
+                            new TopNavigation.MenuItem
+                            {
+                                Text = "Leave a message",
+                                Link = "/concierge/message",
+                                Icon = "comment"
+                            }
+                        }
                     },
                     new TopNavigation.MenuItem
                     {
                         Text = "Bulletin board",
                         Link = "/home/board",
                         Icon = "clipboard-list",
-                        IsActive = "Board" == name
+                        IsActive = "Bulletin board" == name
                     },
                     new TopNavigation.MenuItem
                     {

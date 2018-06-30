@@ -7,7 +7,7 @@
 		foreach (var menuItem in Model.MenuLinks)
 		{
 			<div class="btn-group" role="group">
-				<a href="@menuItem.Link" role="button" class="@(menuItem.IsActive ? "active" : "") btn btn-default btn-xs">
+				<a href="@menuItem.Link" role="button" class="@(menuItem.IsActive ? "active" : "") btn btn-default">
 					@menuItem.Text
 				</a>
 			</div>

@@ -1,20 +1,11 @@
-﻿@{
-    var controller = this.ViewContext.RouteData.Values["controller"].ToString();
-}
+﻿@model List<Reside.UI.Models.TopNavigation.MenuItem>
 
 <div class="btn-group btn-group-justified bottom-nav">
-    <a href="~/" class="btn btn-primary @IsLinkActive(controller, "home")">
-        <i class="fas fa-home"></i> Home
-    </a>
-    <a href="~/community" class="btn btn-primary @IsLinkActive(controller, "community")">
-        <i class="fas fa-users"></i> Community
-    </a>
+	@foreach (var menuItem in Model)
+	{
+		<a href="@menuItem.Link" class="btn btn-primary btn-sm @(menuItem.IsActive ? "active" : "")">
+			<i class="fas fa-@menuItem.Icon"></i><br/>@menuItem.Text
+		</a>
+	}
 </div>
 
-@helper IsLinkActive(string controllerName, string linkName)
-{
-    if (string.Equals(controllerName, linkName, StringComparison.CurrentCultureIgnoreCase))
-    {
-        @Html.Raw("active")
-    }
-}

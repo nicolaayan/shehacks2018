@@ -23,6 +23,13 @@ namespace Reside.UI.Models
             public string Link { get; set; }
             public string Icon { get; set; }
             public bool IsActive { get; set; }
+            public List<MenuItem> BottomLinks { get; set; }
+
+            public MenuItem()
+            {
+                BottomLinks = new List<MenuItem>();
+            }
+            
         }
     }
 }
