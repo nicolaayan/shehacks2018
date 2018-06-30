@@ -1,0 +1,22 @@
+﻿@model dynamic
+
+@{
+	ViewBag.Title = "Login";
+	Layout = "~/Views/Shared/Layouts/_emptyLayout.cshtml";
+}
+
+<div class="login-screen">
+	<img src="http://placehold.it/200" class="center-block" />
+	<div class="center-block login-form">
+		<div class="form-group">
+			<label for="email">Email</label>
+			<input type="email" class="form-control" id="email">
+		</div>
+		<div class="form-group">
+			<label for="code">Building code</label>
+			<input type="text" class="form-control" id="code">
+		</div>
+		<p>Don't have a building code? <u>Request access</u></p><br/>
+		<a href="~/" class="btn btn-success btn-block">Log in</a>
+	</div>
+</div>
