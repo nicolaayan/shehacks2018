@@ -26,7 +26,7 @@ namespace Reside.UI.Controllers
             var model = new Page
             {
                 TopNav = GetTopNav(),
-                TopSecondaryNav = GetTopSecondaryNav("Board")
+                TopSecondaryNav = GetTopSecondaryNav("Bulletin board")
             };
 
             return View(model);
@@ -103,17 +103,10 @@ namespace Reside.UI.Controllers
                     },
                     new TopNavigation.MenuItem
                     {
-                        Text = "Board",
+                        Text = "Bulletin board",
                         Link = "/home/board",
                         Icon = "clipboard-list",
                         IsActive = "Board" == name
-                    },
-                    new TopNavigation.MenuItem
-                    {
-                        Text = "Forum",
-                        Link = "/home/forum",
-                        Icon = "chalkboard-teacher",
-                        IsActive = "Forum" == name
                     },
                     new TopNavigation.MenuItem
                     {
