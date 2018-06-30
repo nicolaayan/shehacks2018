@@ -18,11 +18,25 @@
     <link rel="stylesheet" href="~/Content/css/min/styles.css" />
 </head>
 <body>
-    <div class="container">
-        @RenderBody()
+
+	<div class="container">
+		@Html.Partial("TopNavigation")
+	</div>
+	
+<main>
+	<div class="container">
+		@RenderBody()
+	</div>
+</main>
+	
 
 
-    </div>
-    @Html.Partial("BottomNavigation")
+@Html.Partial("BottomNavigation")
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+        crossorigin="anonymous"></script>
+	<script src="~/Content/jquery/custom.js"></script>
 </body>
 </html>

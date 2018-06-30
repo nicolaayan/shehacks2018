@@ -24,6 +24,7 @@
   "author": "Nicola Ayan",
   "license": "",
   "dependencies": {
-    "grunt-cli": "^1.2.0"
+    "grunt-cli": "^1.2.0",
+    "npm": "^6.1.0"
   }
 }

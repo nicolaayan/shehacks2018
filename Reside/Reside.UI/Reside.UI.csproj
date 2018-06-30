@@ -92,6 +92,7 @@
     <Content Include="Content\css\min\styles.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\Gruntfile.js" />
+    <Content Include="Content\jquery\custom.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -112,6 +113,7 @@
     <Content Include="Content\less\styles.less" />
     <Content Include="Content\less\components\navigation.less" />
     <Content Include="Content\less\settings.less" />
+    <Content Include="Content\less\global.less" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\Layouts\_layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -127,6 +129,7 @@
     <Content Include="Views\Building\Forum.cshtml" />
     <Content Include="Views\Shared\BottomNavigation.cshtml" />
     <None Include="Properties\PublishProfiles\shehacks2018 - Web Deploy.pubxml" />
+    <Content Include="Views\Shared\TopNavigation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
